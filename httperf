@@ -1,0 +1,22 @@
+wget http://www.xenoclast.org/autobench/downloads/autobench-2.1.2.tar.gz
+tar -zxvf autobench-2.1.2.tar.gz
+cd autobench-2.1.2
+make
+make install
+autobench --single_host --host1 www.xxxxx.com --uri1 /crapy/TestDBServlet --quiet     \
+          --low_rate 20 --high_rate 200 --rate_step 20 --num_call 10 \
+          --num_conn 5000 --file results.tsv
+
+autobench --single_host --host1 www.xxxxx.com --uri1 /crapy/TestDBServlet --quiet     \
+          --low_rate 20 --high_rate 40 --rate_step 20 --num_call 1 \
+          --const_test_time 12 --timeout 10
+
+
+scp  -i /home/zigorat/project/rightscale/production_key root@xxxxxx:/root/results.tsv ./
+
+httperf --hog --server=174.129.2.209 --port=8080 --uri /crapy/TestDBServlet
+httperf --hog --server=www.bademjoon.com --port=8080 --uri /crapy/TestDBServlet --wsess=20,500,0.01 --rate=1
+httperf --hog --server=www.bademjoon.com --port=80 --uri /crapy/TestDBServlet --wsess=100,20,0.01 --rate=4 --session-cookie --debug 1
+db: top -d6 -n2 -b | grep  mysqld| tail -1
+tomcat: top -d6 -n2 -b | grep  tomcat| tail -1
+

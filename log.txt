@@ -1,0 +1,8 @@
+rt:0.05,through:2.67,tt:0.31,num_interact:40,Intrvl:15,num_users:1
+rt:0.04,through:12.4,tt:0.35,num_interact:186,Intrvl:15,num_users:5
+rt:0.07,through:11.4,tt:0.38,num_interact:171,Intrvl:15,num_users:5
+rt:0.05,through:13.47,tt:0.32,num_interact:202,Intrvl:15,num_users:5
+rt:0.05,through:12.13,tt:0.35,num_interact:182,Intrvl:15,num_users:5
+rt:0.06,through:11.4,tt:0.38,num_interact:171,Intrvl:15,num_users:5
+% Start time: Sat Mar 15 17:49:31 EDT 2014
+% End time: Sat Mar 15 17:51:01 EDT 2014

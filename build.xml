@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<project name="TPC-W Servlets" default="build" basedir=".">
+  	<target name="doit">
+		<mkdir dir="./build/rbe" /> 
+		<mkdir dir="./build/servlets" />
+   		<mkdir dir="./dist" />
+		<javac srcdir="./src" destdir="./build">
+			<classpath>
+				<pathelement path="./lib/servlet-api.jar"/> 
+			</classpath> 
+		</javac>
+  	
+		<war destfile="./dist/rbe.war" webxml="web.xml">
+			<classes dir="./build/servlets/"/> 
+		</war>
+ 
+		<jar jarfile="./dist/rbe.jar" manifest="MANIFEST.MF">
+			 <fileset dir="build">
+		             <include name="rbe/*.class"/>
+		             <include name="rbe/util/*.class"/>
+		             <include name="rbe/args/*.class"/> 
+		             <include name="generalRBE/*.class"/> 
+		         </fileset>
+			<!-- <classes dir="./build/rbe"/> -->
+		 </jar>
+	</target>
+  
+	
+	<!-- Clean Up --> 
+	<target name="clean">
+    		<delete dir="./build" />
+  	</target>
+	
+</project>
