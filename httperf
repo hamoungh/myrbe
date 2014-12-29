@@ -14,9 +14,9 @@ autobench --single_host --host1 www.xxxxx.com --uri1 /crapy/TestDBServlet --quie
 
 scp  -i /home/zigorat/project/rightscale/production_key root@xxxxxx:/root/results.tsv ./
 
-httperf --hog --server=174.129.2.209 --port=8080 --uri /crapy/TestDBServlet
-httperf --hog --server=www.bademjoon.com --port=8080 --uri /crapy/TestDBServlet --wsess=20,500,0.01 --rate=1
-httperf --hog --server=www.bademjoon.com --port=80 --uri /crapy/TestDBServlet --wsess=100,20,0.01 --rate=4 --session-cookie --debug 1
+httperf --hog --server=xxx --port=8080 --uri /crapy/TestDBServlet
+httperf --hog --server=xxx --port=8080 --uri /crapy/TestDBServlet --wsess=20,500,0.01 --rate=1
+httperf --hog --server=xxx --port=80 --uri /crapy/TestDBServlet --wsess=100,20,0.01 --rate=4 --session-cookie --debug 1
 db: top -d6 -n2 -b | grep  mysqld| tail -1
 tomcat: top -d6 -n2 -b | grep  tomcat| tail -1
 
