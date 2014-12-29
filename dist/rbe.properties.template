@@ -5,7 +5,7 @@ step = 15
 tt_scale = 0.05
 
 # the address of deployed server
-www = http://www.bademjoon.com
+www = http://www.xxxxxx.com
 
 # output file path
 outputFile = log.txt
